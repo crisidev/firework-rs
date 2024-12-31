@@ -1,12 +1,17 @@
 {
   "name": "firew0rks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Play Fireworks and text art animations in the terminal",
   "main": "index.js",
   "type": "module",
   "bin": {
     "firew0rks": "index.js"
   },
+  "files": [
+    "index.js",
+    "fireworks",
+    "fireplace"
+  ],
   "keywords": [
     "animation",
     "ascii",
