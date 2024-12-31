@@ -2,6 +2,10 @@
 
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Get directory where package is installed
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Show help if requested
 if (process.argv.includes('--help')) {
@@ -18,7 +22,10 @@ if (process.argv.includes('--help')) {
 const folderName = process.argv[2] || 'fireworks';
 const loops = process.argv[3] ? parseInt(process.argv[3]) : 20;
 
-if (!fs.existsSync(folderName)) {
+// Resolve folder path relative to package location
+const folderPath = path.join(__dirname, folderName);
+
+if (!fs.existsSync(folderPath)) {
     console.log(folderName + " could not be found");
     process.exit(0);
 }
@@ -28,7 +35,7 @@ let numFound = 0;
 let filesExist = true;
 
 while (filesExist) {
-    const fileName = path.join(folderName, numFound + ".txt");
+    const fileName = path.join(folderPath, numFound + ".txt");
     
     if (fs.existsSync(fileName)) {
         textFiles.push(fs.readFileSync(fileName, 'utf8'));
