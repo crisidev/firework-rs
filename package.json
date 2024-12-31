@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "firew0rks": "./index.js"
+    "firew0rks": "index.js"
   },
   "keywords": [
     "animation",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/addyosmani/firew0rks"
+    "url": "git+https://github.com/addyosmani/firew0rks.git"
   },
   "engines": {
     "node": ">=14.16"
