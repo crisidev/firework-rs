@@ -1,7 +1,7 @@
 {
   "name": "firew0rks",
   "version": "1.0.0",
-  "description": "Play text art animations in the terminal",
+  "description": "Play Fireworks and text art animations in the terminal",
   "main": "index.js",
   "type": "module",
   "bin": {
