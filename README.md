@@ -8,6 +8,17 @@ If the folder name is found on disk, firework(r)s will prefer it over the embedd
 
 ## Installation
 
+### Arch Linux
+
+[fireworkrs](https://aur.archlinux.org/packages/fireworkrs) is available as a package in the AUR.
+It can be installed with an AUR helper (e.g. `paru`):
+
+```bash
+paru -S fireworkrs
+```
+
+### Cargo
+
 ```bash
 cargo install fireworkrs
 ```
