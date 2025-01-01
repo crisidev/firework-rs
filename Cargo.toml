@@ -2,6 +2,12 @@
 name = "fireworkrs"
 version = "0.2.0"
 edition = "2021"
+authors = ["Matteo Bigoi <bigo@crisidev.org>"]
+description = "Play text art animations in your terminal! This package includes several pre-made animations like fireworks and a cozy fireplace that are embedded in the binary."
+license-file = "LICENSE"
+readme = "README.md"
+keywords = ["terminal", "fireworks", "cli", "ascii"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 include_dir = "0.7"
