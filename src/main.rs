@@ -1,4 +1,4 @@
-use std::{env, thread, time::Duration};
+use std::{env, fs, path::Path, thread, time::Duration};
 
 use include_dir::{include_dir, Dir};
 
@@ -22,22 +22,39 @@ fn main() {
         .map_or("fireworks".to_string(), |s| s.to_string());
     let loops: i32 = args.get(2).and_then(|s| s.parse().ok()).unwrap_or(20);
 
-    let folder = match folder_name.as_str() {
-        "fireworks" => FIREWORKS_DIR,
-        "fireplace" => FIREPLACE_DIR,
-        "rick_ascii" => RICKROLL_DIR,
-        _ => panic!("folder {folder_name} not available"),
-    };
-
     let mut frames = vec![];
     let mut file_found = true;
     let mut file_number = 0;
-    while file_found {
-        if let Some(f) = folder.get_file(format!("{file_number}.txt")) {
-            frames.push(f.contents_utf8().unwrap_or_else(|| panic!("unable to read file {file_number}.txt from folder {folder_name} into utf8 string")));
-            file_number += 1;
-        } else {
-            file_found = false;
+    let folder_path = Path::new(&folder_name);
+    if folder_path.exists() {
+        println!("using folder from path {folder_name}");
+        while file_found {
+            let f = folder_path.join(format!("{file_number}.txt"));
+            if f.exists() {
+                let content = fs::read_to_string(f).unwrap_or_else(|_| panic!("unable to read file {file_number}.txt from folder {folder_name} into utf8 string"));
+                frames.push(content);
+                file_number += 1;
+            } else {
+                file_found = false;
+            }
+        }
+    } else {
+        println!("using embedded folder {folder_name}");
+        let folder = match folder_name.as_str() {
+            "fireworks" => FIREWORKS_DIR,
+            "fireplace" => FIREPLACE_DIR,
+            "rick_ascii" => RICKROLL_DIR,
+            _ => panic!("folder {folder_name} not available"),
+        };
+
+        while file_found {
+            if let Some(f) = folder.get_file(format!("{file_number}.txt")) {
+                let content = f.contents_utf8().unwrap_or_else(|| panic!("unable to read file {file_number}.txt from folder {folder_name} into utf8 string")).to_string();
+                frames.push(content);
+                file_number += 1;
+            } else {
+                file_found = false;
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 # 🦀 firework-rs 🦀
 
-Play text art animations in your terminal! This package includes several pre-made animations like fireworks and a cozy fireplace.
+Play text art animations in your terminal! This package includes several pre-made animations like fireworks and a cozy fireplace that are embedded in the binary.
 
 ![Eowzf_jWMAAk43x](https://github.com/user-attachments/assets/58d4c0ef-9f0b-49ae-80f0-4e12db3e34f0)
 
