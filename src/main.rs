@@ -11,7 +11,7 @@ fn main() {
     if args.contains(&String::from("--help")) {
         println!();
         println!("Play text art animations in the terminal\n");
-        println!("Usage: firework-rs [folder] [loops]");
+        println!("Usage: fireworkrs [folder] [loops]");
         println!("\t[folder]\tFolder containing text art frames: fireworks | fireplace | rick_ascii (default: fireworks)");
         println!("\t[loops]\t\tNumber of times to loop the animation or use -1 to loop until the user terminates the program (default: 20)");
         println!();

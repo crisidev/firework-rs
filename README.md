@@ -1,4 +1,4 @@
-# 🦀 firework-rs 🦀
+# 🦀 firework(r)s 🦀
 
 Play text art animations in your terminal! This package includes several pre-made animations like fireworks and a cozy fireplace that are embedded in the binary.
 
@@ -7,13 +7,13 @@ Play text art animations in your terminal! This package includes several pre-mad
 ## Installation
 
 ```bash
-cargo install firework-rs
+cargo install fireworkrs
 ```
 
 ## Usage
 
 ```bash
-firework-rs [folder] [loops]
+fireworkrs [folder] [loops]
 ```
 
 Parameters (all optional):
@@ -24,24 +24,24 @@ Parameters (all optional):
 
 Run with defaults (fireworks animation, 20 loops):
 ```bash
-firework-rs
+fireworkrs
 ```
 
 Play the fireworks animation with custom loops:
 ```bash
-firework-rs fireworks 3
+fireworkrs fireworks 3
 ```
 
 Enjoy a cozy fireplace forever:
 ```bash
-firework-rs fireplace -1
+fireworkrs fireplace -1
 ```
 
 ## Creating Your Own Animations
 
 1. Create a new folder for your animation
 2. Add text art frames as numbered .txt files (0.txt, 1.txt, 2.txt, etc.)
-3. Run firework-rs with your folder name
+3. Run fireworkrs with your folder name
 
 ## Acknowledgments
 
