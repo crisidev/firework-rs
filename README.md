@@ -4,6 +4,8 @@ Play text art animations in your terminal! This package includes several pre-mad
 
 ![Eowzf_jWMAAk43x](https://github.com/user-attachments/assets/58d4c0ef-9f0b-49ae-80f0-4e12db3e34f0)
 
+If the folder name is found on disk, firework(r)s will prefer it over the embedded animation. See below how to create your own animation :)
+
 ## Installation
 
 ```bash
